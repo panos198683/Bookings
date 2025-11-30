@@ -11,11 +11,6 @@ Accessibility, error handling, and smooth loading states are integrated for a pr
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Getting Started](#getting-started)
-- [Project Structure](#project-structure)
-- [Available Scripts](#available-scripts)
-- [Folder Layout](#folder-layout)
-- [Contributing](#contributing)
-- [License](#license)
 
 ---
 
