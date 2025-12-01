@@ -36,6 +36,8 @@ export const DatePicker: React.FC<DatePickerProps> = ({
         className='flex items-center justify-between leading-none
  w-full h-[36px] truncate border border-gray-300 rounded px-3 py-2 bg-white text-left text-sm focus:outline-none focus:ring-1 focus:ring-blue-500'
         onClick={() => setOpen(!open)}
+        aria-label={label}
+        data-testid={label.replace(/\s+/g, '-').toLowerCase()}
       >
         {value ? formatDate(value) : placeholder}
 

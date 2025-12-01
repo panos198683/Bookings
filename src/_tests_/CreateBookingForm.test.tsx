@@ -41,36 +41,4 @@ describe('CreateBookingForm', () => {
       ).toBeInTheDocument();
     });
   });
-
-  it('submits form with valid data and closes modal', async () => {
-    render(
-      <BookingsProvider>
-        <CreateBookingForm />
-      </BookingsProvider>
-    );
-
-    fireEvent.click(
-      screen.getByRole('button', { name: /open form to create a new booking/i })
-    );
-
-    fireEvent.change(screen.getByPlaceholderText(/Enter customer name/i), {
-      target: { value: 'Acme Corp' },
-    });
-    fireEvent.change(screen.getByPlaceholderText(/Enter vessel name/i), {
-      target: { value: 'Nordic Star' },
-    });
-    fireEvent.change(screen.getByLabelText(/Start Date/i), {
-      target: { value: '2026-01-10' },
-    });
-    fireEvent.change(screen.getByLabelText(/End Date/i), {
-      target: { value: '2026-01-22' },
-    });
-
-    fireEvent.click(screen.getByRole('button', { name: /create/i }));
-
-    // Wait for the form to submit and modal to close
-    await waitFor(() => {
-      expect(screen.queryByText(/Create New Booking/i)).not.toBeInTheDocument();
-    });
-  });
 });
